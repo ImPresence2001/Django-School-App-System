@@ -2,26 +2,44 @@
 {% load static %}
 <html>
     <head>
-        <title>Palawan School: Home</title>
+        <title>Job Ignite | Home</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
     </head>
     <body>
-        <div class="navbar-container">
-            <nav>
-                <a href="/" class="active">Home</a>
-                <a href="/about">About Marvin School</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
-                <a href="javascript:void(0);" class="icon" onclick="navfunc()">
-                    &#9776;
-                </a>
-            </nav>
-        </div>
+        <nav>
+            <div class="menu-icon">
+                <span class="fas fa-bars"></span>
+            </div>
 
+            <a href="/" class="logo">Job Ignite</a>
+
+            <div class="nav-items">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">Explore</a></li>
+                <li><a href="#">Blogs</a></li>
+                <li><a href="#">Contact</a></li>
+            </div>
+      
+            <div class="search-icon">
+                <span class="fas fa-search"></span>
+            </div>
+      
+            <div class="cancel-icon">
+                <span class="fas fa-times"></span>
+            </div>
+      
+            <form action="#">
+                <input type="search" placeholder="Search" class="search-input" />
+                <button class="fas fa-search"></button>
+            </form>
+            <div class="nav-signin">
+                <li><a href="/sign">Sign in</a></li>
+            </div>
+        </nav>
+        
         <p>This is home!</p>
-
         <script type="text/javascript" src="{% static '/js/script.js' %}"></script>
     </body>
 </html>

@@ -6,3 +6,6 @@ def main(request):
 
 def about(request):
     return render(request, "about.html")
+
+def sign(request):
+    return render(request, "sign.html")

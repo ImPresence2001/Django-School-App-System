@@ -1,16 +1,26 @@
-function navfunc() {
-    var nav = document.querySelector(".navbar-container nav");
-        var links = document.querySelectorAll(".navbar-container nav a:not(.icon)");
+let menuIcon = document.querySelector(".menu-icon span");
+let navBar = document.querySelector(".nav-items");
+let searchIcon = document.querySelector(".search-icon");
+let cancelIcon = document.querySelector(".cancel-icon");
+let searchForm = document.querySelector("form");
 
-        if (nav.classList.contains("responsive")) {
-            nav.classList.remove("responsive");
-            links.forEach(link => {
-                link.style.order = 0;
-            });
-        } else {
-            nav.classList.add("responsive");
-            links.forEach((link, index) => {
-                link.style.order = index + 1;
-            });
-        }
-    }
+menuIcon.addEventListener("click", () => {
+  navBar.classList.add("active");
+  menuIcon.classList.add("hide");
+  searchIcon.classList.add("hide");
+  cancelIcon.classList.add("show");
+});
+
+cancelIcon.addEventListener("click", () => {
+  searchForm.classList.remove("active");
+  navBar.classList.remove("active");
+  searchIcon.classList.remove("hide");
+  cancelIcon.classList.remove("show");
+  menuIcon.classList.remove("hide");
+});
+
+searchIcon.addEventListener("click", () => {
+  searchForm.classList.add("active");
+  cancelIcon.classList.add("show");
+  searchIcon.classList.add("hide");
+});
